@@ -356,12 +356,13 @@
 
 
 
+        <p>Filter studies by the phenomena they investigate, the explanations they propose, and the ways they produce evidence. A publication can appear under several headings; classification does not imply endorsement of its claims.</p>
         <div class="catalogue-controls" aria-label="Filter publication entries">
           <label for="publication-search">Search published studies</label>
           <input id="publication-search" type="search" placeholder="Search author, title or technique…">
-          <label for="publication-facet">Classify by</label>
+          <label for="publication-facet">Explore research by</label>
           <select id="publication-facet" aria-label="Classification dimension"><option value="">All dimensions</option></select>
-          <label for="publication-term">Classification</label>
+          <label for="publication-term" id="publication-term-label">Select a topic or method</label>
           <select id="publication-term" aria-label="Classification term"><option value="">All classifications</option></select>
         </div>
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
@@ -400,13 +401,10 @@
 
         <p class="methods-kicker">02 / Methodological foundations</p>
 
-        <h2>Four levels of analysis</h2>
+        <h2>From research question to evidence</h2>
 
         <p>
-          A published study may combine all four levels.
-          Distinguishing them helps prevent a theory,
-          calculation, dataset or measured quantity
-          from being mistaken for an entire method.
+          These four analytical questions help document how a study moves from explanation to investigation and evidence. They are not mutually exclusive research categories, and a study need not quantify its findings.
         </p>
 
         <div class="methods-grid">
@@ -415,10 +413,10 @@
 
             <span class="method-label">Level 01 / Explanation</span>
 
-            <h3>Theoretical mechanism</h3>
+            <h3>Theoretical explanation and assumptions</h3>
 
             <p>
-              What is proposed to produce unequal exchange?
+              What does the author seek to explain, and what assumptions or mechanisms are proposed?
             </p>
 
             <p>
@@ -435,7 +433,7 @@
 
             <span class="method-label">Level 02 / Operationalisation</span>
 
-            <h3>Research and estimation strategy</h3>
+            <h3>Research design and operationalisation</h3>
 
             <p>
               How is the theoretical proposition translated
@@ -458,7 +456,7 @@
 
             <span class="method-label">Level 03 / Implementation</span>
 
-            <h3>Analytical and computational technique</h3>
+            <h3>Analytical procedures and techniques</h3>
 
             <p>
               What analytical procedures are used to examine
@@ -479,7 +477,7 @@
 
             <span class="method-label">Level 04 / Output</span>
 
-            <h3>Findings and measured quantity</h3>
+            <h3>Evidence, findings and outputs</h3>
 
             <p>
               What does the investigation establish,
@@ -526,228 +524,24 @@
     <hr class="methods-divider">
 
 
-    <!-- RESEARCH APPROACHES -->
-
+    <!-- DYNAMIC RESEARCH ONTOLOGY -->
     <section id="approaches">
       <div class="container">
-
-        <p class="methods-kicker">03 / Research approaches</p>
-
-        <h2>Established research approaches (legacy overview)</h2>
-
-        <p>
-          The following are historical approach groupings retained for context.
-          Browse the publication catalogue using the newer, multi-dimensional
-          classification filters above. These groupings are not mutually exclusive: a single study may draw on a particular
-          theory, use input–output analysis and investigate
-          ecological flows.
-        </p>
-
-        <div class="methods-grid">
-
-
-          <article class="method-card approach-card">
-
-            <span class="method-label">
-              Approach 01 / Valuation
-            </span>
-
-            <h3>Wage differentials and counterfactual prices</h3>
-
-            <p>
-              Approaches that investigate unequal exchange
-              through specified relationships between wages,
-              prices and international production.
-            </p>
-
-            <p>
-              Empirical implementations may estimate
-              counterfactual prices or values under
-              alternative wage or valuation assumptions.
-              The precise calculation must be attributed
-              to the particular study.
-            </p>
-
-            <p class="methods-small">
-              Associated theoretical discussions include
-              Arghiri Emmanuel's work on unequal exchange.
-              No single distortion factor or formula is
-              assumed to apply to the entire category.
-            </p>
-
-          </article>
-
-
-          <article class="method-card approach-card">
-
-            <span class="method-label">
-              Approach 02 / Production accounting
-            </span>
-
-            <h3>Input–output and embodied-flow analysis</h3>
-
-            <p>
-              Uses input–output relationships to estimate
-              production requirements across sectors
-              and, in multiregional models, countries.
-            </p>
-
-            <p>
-              Depending on the model and its extensions,
-              this may involve embodied labour, materials,
-              energy, land or monetary flows.
-            </p>
-
-            <p class="methods-small">
-              Input–output analysis is a computational
-              technique. Embodied labour and resources
-              are possible measured quantities, not
-              interchangeable methods.
-            </p>
-
-          </article>
-
-
-          <article class="method-card approach-card">
-
-            <span class="method-label">
-              Approach 03 / Marxian value and prices
-            </span>
-
-            <h3>Prices of production and profit equalisation</h3>
-
-            <p>
-              Investigates theoretical accounts of
-              value transfer associated with differences
-              in production conditions and the formation
-              of prices of production.
-            </p>
-
-            <p>
-              Particular empirical studies may operationalise
-              these relationships using sectoral data,
-              value and price models or other specified
-              estimation procedures.
-            </p>
-
-            <p class="methods-small">
-              This is a theoretical tradition with
-              different possible empirical implementations.
-              It should not be conflated with Emmanuel's
-              wage-based explanation.
-            </p>
-
-          </article>
-
-          
-          <article class="method-card approach-card">
-
-            <span class="method-label">
-              Approach 04 / Ecological accounting
-            </span>
-
-            <h3>Ecologically unequal exchange</h3>
-
-            <p>
-              Investigates asymmetric ecological and
-              biophysical relationships associated with
-              international production and consumption.
-            </p>
-
-            <p>
-              Studies may examine physical flows of
-              materials, energy or land, sometimes using
-              environmentally extended input–output
-              analysis and sometimes adding monetary
-              valuation.
-            </p>
-
-            <p class="methods-small">
-              Ecologically unequal exchange is a research
-              field and theoretical framework. Its
-              empirical techniques and measured quantities
-              must be identified study by study.
-            </p>
-
-          </article>
-                    <article class="method-card approach-card">
-
-            <span class="method-label">
-              Approach 05 / Historical and structural analysis
-            </span>
-
-            <h3>Historical and structural political economy</h3>
-
-            <p>
-              Investigates how economic and political
-              relationships emerge, change and reproduce
-              across particular historical contexts.
-            </p>
-
-            <p>
-              Studies may use archival and documentary
-              research, historical comparison and
-              relational analysis to examine dependency,
-              accumulation, imperialism and development.
-            </p>
-
-            <p class="methods-small">
-              This is a broad research approach, not a
-              single technique. The sources, analytical
-              procedures and theoretical framework must
-              be identified for each individual study.
-            </p>
-
-          </article>
-          
-          <article class="method-card approach-card">
-          
-            <span class="method-label">
-              Approach 06 / Colonial fiscal and monetary relations
-            </span>
-          
-            <h3>Colonial drain and imperial transfers</h3>
-          
-            <p>
-              Investigates the historically specific fiscal,
-              monetary, commercial and financial arrangements
-              through which colonial powers appropriated
-              resources, revenues and purchasing power.
-            </p>
-          
-            <p>
-              Studies may reconstruct colonial budgets,
-              taxation, trade surpluses, public debt,
-              exchange arrangements and financial transactions
-              to investigate the mechanisms and magnitude
-              of colonial drain.
-            </p>
-          
-            <p class="methods-small">
-              Associated theoretical and historical contributions
-              include the work of Dadabhai Naoroji, Utsa Patnaik
-              and Prabhat Patnaik. Colonial drain is not
-              interchangeable with contemporary unequal-exchange
-              estimates; its mechanisms, accounting procedures
-              and interpretations must be specified study by study.
-            </p>
-          
-          </article>
-
-
+        <p class="methods-kicker">03 / Research map</p>
+        <h2>What can researchers investigate?</h2>
+        <p>Begin with a <strong>research object</strong>: a phenomenon or relationship to be investigated, without assuming in advance what causes it. Then distinguish the study's theoretical framework, research orientation, design, techniques and evidence. These dimensions overlap and are not rival schools of thought.</p>
+        <p>Research objects below are provisional domains, not an exhaustive list. Select a domain to filter the publication library. The library includes research on economic inequalities and their possible mechanisms, as well as work investigating alternative forms of development.</p>
+        <div id="research-object-map" class="methods-grid" aria-label="Research object domains">
+          <p class="methods-small">Loading research domains…</p>
         </div>
-
-        <p class="methods-small">
-          These categories are provisional navigational
-          groupings, not mutually exclusive methods or
-          an exhaustive classification of research.
-        </p>
-
+        <div class="methods-note">
+          <strong>How to read this map</strong>
+          <p><strong>Object:</strong> what is being investigated (for example, international monetary inequality). <strong>Framework:</strong> how the author explains or interprets it (for example, a law of world value). <strong>Design and technique:</strong> how the question is examined (for example, comparing GDP per capita at market exchange rates). <strong>Output:</strong> what is reported or established. A measured difference does not, by itself, prove appropriation or identify its cause.</p>
+          <p>Publication relationships, data reuse and replication status are documented separately; a citation or shared technique does not imply theoretical agreement.</p>
+        </div>
       </div>
     </section>
-
     <hr class="methods-divider">
-
 
     <!-- COMPARISON FRAMEWORK -->
 
@@ -1192,6 +986,8 @@
       const search = document.getElementById('publication-search');
       const facetSelect = document.getElementById('publication-facet');
        const termSelect = document.getElementById('publication-term');
+      const termLabel = document.getElementById('publication-term-label');
+      const objectMap = document.getElementById('research-object-map');
        let taxonomy = null;
       const explorerStudy = document.getElementById('explorer-study');
       const explorerType = document.getElementById('explorer-type');
@@ -1278,13 +1074,33 @@
         populateTerms();
       }
       function populateTerms() {
-        termSelect.replaceChildren(el('option', '', 'All classifications'));
+        const active = (taxonomy?.facets || []).find(f => f.id === facetSelect.value);
+        termLabel.textContent = active ? `Select a ${active.label.toLowerCase().replace(/s$/, '')}` : 'Select a topic or method';
+        termSelect.replaceChildren(el('option', '', active ? `All ${active.label.toLowerCase()}` : 'All classifications'));
         termSelect.firstChild.value = '';
         if (!taxonomy) return;
         const facets = (taxonomy.facets || []).filter(f => !facetSelect.value || f.id === facetSelect.value);
         for (const facet of facets) for (const term of facet.terms || []) {
           const option = el('option', '', facetSelect.value ? term.label : `${facet.label}: ${term.label}`);
           option.value = term.id; termSelect.append(option);
+        }
+      }
+      function renderObjectMap() {
+        if (!objectMap || !taxonomy) return;
+        objectMap.replaceChildren();
+        const objects = (taxonomy.facets || []).find(f => f.id === 'objects');
+        if (!objects) return;
+        for (const term of objects.terms || []) {
+          const article = el('article', 'method-card');
+          article.append(el('h3', '', term.label));
+          article.append(el('p', '', term.definition || ''));
+          const button = el('button', '', 'Explore related studies');
+          button.type = 'button';
+          button.addEventListener('click', () => {
+            facetSelect.value = 'objects'; populateTerms(); termSelect.value = term.id;
+            render(); document.getElementById('catalogue').scrollIntoView({behavior:'smooth',block:'start'});
+          });
+          article.append(button); objectMap.append(article);
         }
       }
       function render() {
@@ -1375,7 +1191,7 @@
           render();
           fetch('./taxonomy.json', { cache: 'no-cache' })
             .then(response => { if (!response.ok) throw new Error('Taxonomy unavailable'); return response.json(); })
-            .then(data => { taxonomy = data; populateFacets(); })
+            .then(data => { taxonomy = data; populateFacets(); renderObjectMap(); })
             .catch(error => { console.warn('Classification filters unavailable:', error); });
 
           // Absolute site path avoids relative URL resolution problems on GitHub Pages.
