@@ -245,6 +245,28 @@
     .publication-card summary .publication-title { margin:0; }
     @media (prefers-reduced-motion: no-preference) { .publication-card { transition:box-shadow .15s ease; } }
     .publication-card:hover { box-shadow:0 4px 16px #35291d18; }
+    /* Editorial, single-column publication index: lean rows, not oversized cards. */
+    #publication-cards { display:grid; grid-template-columns:minmax(0,1fr); gap:0; border-top:1px solid #d8d0c5; }
+    #publication-cards .publication-card { border:0; border-bottom:1px solid #d8d0c5; border-radius:0; background:transparent; box-shadow:none; }
+    #publication-cards .publication-card:hover { box-shadow:none; }
+    #publication-cards .publication-card summary { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:10px 20px; align-items:center; padding:13px 12px; }
+    #publication-cards .publication-card summary h3 { margin:0 0 3px; font-size:1rem; line-height:1.35; }
+    #publication-cards .publication-card summary .publication-title { margin:0; font-size:.91rem; line-height:1.4; color:#514d47; }
+    #publication-cards .publication-card .method-label { grid-column:2; font-size:.68rem; font-weight:600; padding:4px 7px; border-radius:3px; max-width:185px; text-align:center; }
+    #publication-cards .publication-card summary::after { grid-column:3; margin:0; font-size:.78rem; white-space:nowrap; content:'Details +'; }
+    #publication-cards .publication-card details[open] summary::after { content:'Close −'; }
+    #publication-cards .publication-card .publication-detail { padding:12px 18px 22px; background:#fffdf8; }
+    #publication-cards .publication-card summary:hover,#publication-cards .publication-card summary:focus-visible { background:#f4efe7; }
+    /* Clear visual and spatial division between catalogue and relationship explorer. */
+    .methods-section-alternate { background:#f4efe7; padding:48px 0 54px; }
+    .methods-section-alternate .explorer { margin:20px 0 0; background:#fffdf8; border:1px solid #d8d0c5; }
+    @media (max-width:700px) {
+      #publication-cards .publication-card summary { grid-template-columns:minmax(0,1fr) auto; gap:8px 12px; }
+      #publication-cards .publication-card .publication-heading { grid-column:1 / -1; }
+      #publication-cards .publication-card .method-label { grid-column:1; justify-self:start; }
+      #publication-cards .publication-card summary::after { grid-column:2; }
+      .methods-section-alternate { padding:32px 0 38px; }
+    }
   </style>
 </head>
 
@@ -368,6 +390,17 @@
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
         <div id="publication-cards" class="methods-grid" aria-label="Publication entries"></div>
 
+      </div>
+    </section>
+
+    <hr class="methods-divider">
+
+    <!-- RESEARCH RELATIONSHIPS: a separate destination from the catalogue -->
+    <section id="connections-section" class="methods-section-alternate">
+      <div class="container">
+        <p class="methods-kicker">02 / Research relationships</p>
+        <h2>Connections between studies</h2>
+        <p>Follow documented links between publications, including data reuse, shared authorship and methodological inheritance. These relationships do not imply agreement between their conclusions.</p>
         <section class="explorer" id="relationship-explorer" aria-labelledby="explorer-heading">
           <p class="methods-kicker">Explore research connections</p>
           <h3 id="explorer-heading">How are these studies connected?</h3>
@@ -399,7 +432,7 @@
     <section>
       <div class="container">
 
-        <p class="methods-kicker">02 / Methodological foundations</p>
+        <p class="methods-kicker">03 / Methodological foundations</p>
 
         <h2>From research question to evidence</h2>
 
@@ -527,7 +560,7 @@
     <!-- DYNAMIC RESEARCH ONTOLOGY -->
     <section id="approaches">
       <div class="container">
-        <p class="methods-kicker">03 / Research map</p>
+        <p class="methods-kicker">04 / Research map</p>
         <h2>What can researchers investigate?</h2>
         <p>Begin with a <strong>research object</strong>: a phenomenon or relationship to be investigated, without assuming in advance what causes it. Then distinguish the study's theoretical framework, research orientation, design, techniques and evidence. These dimensions overlap and are not rival schools of thought.</p>
         <p>Research objects below are provisional domains, not an exhaustive list. Select a domain to filter the publication library. The library includes research on economic inequalities and their possible mechanisms, as well as work investigating alternative forms of development.</p>
@@ -549,7 +582,7 @@
     <section>
       <div class="container">
 
-        <p class="methods-kicker">04 / Interpretation</p>
+        <p class="methods-kicker">05 / Interpretation</p>
 
         <h2>What makes two estimates comparable?</h2>
 
@@ -1117,9 +1150,11 @@
           article.dataset.approach = (item.category || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
           const details = el('details');
           const summary = el('summary');
+          const heading = el('div', 'publication-heading');
+          heading.append(el('h3', '', `${item.authors} (${item.year})`));
+          heading.append(el('p', 'publication-title', item.title));
+          summary.append(heading);
           summary.append(el('span', 'method-label', item.category || 'Research study'));
-          summary.append(el('h3', '', `${item.authors} (${item.year})`));
-          summary.append(el('p', 'publication-title', item.title));
           details.append(summary);
           const body = el('div', 'publication-detail');
           if (item.summary) body.append(el('p', '', item.summary));
