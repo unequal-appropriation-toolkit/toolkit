@@ -1,0 +1,220 @@
+{
+  "version": "1.0-draft",
+  "status": "provisional; contributor review required",
+  "principles": [
+    "Classify research objects separately from explanatory claims.",
+    "Multiple terms may apply; do not force a primary label.",
+    "Do not infer causation or appropriation from an observed asymmetry.",
+    "Only assign terms supported by the publication or its documented profile.",
+    "Add terms through editorial review with a definition and scope."
+  ],
+  "facets": [
+    {
+      "id": "objects",
+      "label": "Research objects",
+      "description": "Phenomena and relations investigated; labels avoid presupposing contested explanations.",
+      "terms": [
+        {
+          "id": "value-prices-monetary",
+          "label": "Value, prices and monetary relations",
+          "definition": "International and domestic relations of value, prices, wages, currencies, exchange rates and purchasing power."
+        },
+        {
+          "id": "production-labour-surplus",
+          "label": "Production, labour and surplus relations",
+          "definition": "Organisation and distribution of labour, production, surplus, ownership and control."
+        },
+        {
+          "id": "material-ecological",
+          "label": "Material and ecological relations",
+          "definition": "Flows and uses of materials, energy, land, labour embodied in production, and environmental burdens."
+        },
+        {
+          "id": "fiscal-financial",
+          "label": "Fiscal and financial relations",
+          "definition": "Taxation, debt, credit, fiscal revenues, financial flows and institutions."
+        },
+        {
+          "id": "development-differentiation",
+          "label": "Development and structural differentiation",
+          "definition": "Differences and changes in productive structure, development trajectories, technical capacities and provisioning."
+        },
+        {
+          "id": "political-institutional-territorial",
+          "label": "Political, institutional and territorial relations",
+          "definition": "State, law, property, coercion, sovereignty and territorial arrangements shaping economic relations."
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "label": "Theoretical frameworks",
+      "description": "Author-specific interpretations and traditions; classification does not endorse their claims.",
+      "terms": [
+        {
+          "id": "ecologically-unequal-exchange",
+          "label": "Ecologically unequal exchange",
+          "definition": "Theoretical approaches interpreting asymmetric ecological or embodied-resource relations as unequal exchange."
+        },
+        {
+          "id": "imperialist-appropriation",
+          "label": "Imperialist appropriation",
+          "definition": "Frameworks interpreting international transfers and economic relations as appropriation structured by imperialism."
+        },
+        {
+          "id": "needs-based-development",
+          "label": "Needs-based development",
+          "definition": "Approaches assessing development through basic needs, decent living and provisioning requirements."
+        },
+        {
+          "id": "delinking-autocentric",
+          "label": "Delinking and autocentric development",
+          "definition": "Approaches examining the reorganisation of development priorities away from subordination to world-capitalist accumulation."
+        },
+        {
+          "id": "law-of-world-value",
+          "label": "Law of world value",
+          "definition": "Frameworks investigating international value relations and their global monetary or developmental expressions."
+        }
+      ]
+    },
+    {
+      "id": "orientations",
+      "label": "Research orientations",
+      "description": "The principal intellectual tasks undertaken by a study.",
+      "terms": [
+        {
+          "id": "description-measurement",
+          "label": "Description and measurement",
+          "definition": "Documents patterns, magnitudes, distributions or indicators."
+        },
+        {
+          "id": "explanation",
+          "label": "Theoretical or causal explanation",
+          "definition": "Develops or tests explanations of relationships and processes."
+        },
+        {
+          "id": "historical-reconstruction",
+          "label": "Historical reconstruction",
+          "definition": "Reconstructs development and change in historically specific relations."
+        },
+        {
+          "id": "evaluation-critique",
+          "label": "Evaluation and critique",
+          "definition": "Assesses methods, theories, policies or normative claims."
+        },
+        {
+          "id": "transformation",
+          "label": "Transformation and alternatives",
+          "definition": "Investigates alternative economic arrangements, their requirements or possibilities."
+        }
+      ]
+    },
+    {
+      "id": "designs",
+      "label": "Research designs",
+      "description": "How research questions are translated into investigations.",
+      "terms": [
+        {
+          "id": "embodied-flow-accounting",
+          "label": "Embodied-flow accounting",
+          "definition": "Allocates direct and upstream inputs to production, trade or final demand."
+        },
+        {
+          "id": "comparative-monetary-analysis",
+          "label": "Comparative monetary analysis",
+          "definition": "Compares monetary measures across countries, groups or periods."
+        },
+        {
+          "id": "literature-scenario-comparison",
+          "label": "Literature synthesis and scenario comparison",
+          "definition": "Synthesises published estimates and compares explicit scenarios."
+        },
+        {
+          "id": "illustrative-comparative-modelling",
+          "label": "Illustrative comparative modelling",
+          "definition": "Uses stylised models to compare hypothetical or alternative configurations."
+        },
+        {
+          "id": "historical-structural-analysis",
+          "label": "Historical and structural analysis",
+          "definition": "Examines the historically constituted relations and conditions of economic outcomes."
+        }
+      ]
+    },
+    {
+      "id": "techniques",
+      "label": "Techniques",
+      "description": "Concrete analytic or computational procedures.",
+      "terms": [
+        {
+          "id": "eemrio",
+          "label": "Environmentally extended MRIO",
+          "definition": "Multiregional input–output accounting with environmental or physical extensions."
+        },
+        {
+          "id": "tiva",
+          "label": "Trade in value added",
+          "definition": "Accounting for value added embodied in production and trade."
+        },
+        {
+          "id": "piecewise-sem",
+          "label": "Piecewise structural equation modelling",
+          "definition": "Linked regression models for hypothesised statistical relationships."
+        },
+        {
+          "id": "monetary-valuation",
+          "label": "Monetary valuation",
+          "definition": "Procedures assigning monetary amounts to specified physical or economic quantities."
+        },
+        {
+          "id": "scenario-comparison",
+          "label": "Scenario comparison",
+          "definition": "Comparison of specified hypothetical or modelled scenarios."
+        },
+        {
+          "id": "nominal-gdp-per-capita-ratio",
+          "label": "Nominal GDP-per-capita ratio",
+          "definition": "Ratio of nominal GDP per person between specified groups, converted at market exchange rates."
+        }
+      ]
+    },
+    {
+      "id": "outputs",
+      "label": "Evidence and outputs",
+      "description": "Types of results or measurements; not necessarily causal conclusions.",
+      "terms": [
+        {
+          "id": "embodied-flows",
+          "label": "Embodied physical flows",
+          "definition": "Estimated embodied material, energy, land or labour quantities."
+        },
+        {
+          "id": "monetary-estimates",
+          "label": "Monetary estimates",
+          "definition": "Estimated monetary magnitudes or comparisons."
+        },
+        {
+          "id": "statistical-associations",
+          "label": "Statistical associations",
+          "definition": "Modelled associations or fit statistics."
+        },
+        {
+          "id": "needs-resource-requirements",
+          "label": "Needs and resource requirements",
+          "definition": "Thresholds or scenarios for needs, provisioning, energy and material use."
+        },
+        {
+          "id": "illustrative-development-outcomes",
+          "label": "Illustrative development outcomes",
+          "definition": "Modelled or illustrative differences in growth, prices, distribution or production."
+        },
+        {
+          "id": "monetary-inequality-index",
+          "label": "Monetary Inequality Index",
+          "definition": "Ratio of nominal GDP per capita at market exchange rates for two specified groups."
+        }
+      ]
+    }
+  ]
+}

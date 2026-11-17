@@ -359,8 +359,10 @@
         <div class="catalogue-controls" aria-label="Filter publication entries">
           <label for="publication-search">Search published studies</label>
           <input id="publication-search" type="search" placeholder="Search author, title or technique…">
-          <label for="publication-category">Research approach</label>
-          <select id="publication-category"><option value="">All approaches</option></select>
+          <label for="publication-facet">Classify by</label>
+          <select id="publication-facet" aria-label="Classification dimension"><option value="">All dimensions</option></select>
+          <label for="publication-term">Classification</label>
+          <select id="publication-term" aria-label="Classification term"><option value="">All classifications</option></select>
         </div>
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
         <div id="publication-cards" class="methods-grid" aria-label="Publication entries"></div>
@@ -531,12 +533,12 @@
 
         <p class="methods-kicker">03 / Research approaches</p>
 
-        <h2>Mapping the field</h2>
+        <h2>Established research approaches (legacy overview)</h2>
 
         <p>
-          The following categories organise research
-          approaches for navigation. They are not mutually
-          exclusive: a single study may draw on a particular
+          The following are historical approach groupings retained for context.
+          Browse the publication catalogue using the newer, multi-dimensional
+          classification filters above. These groupings are not mutually exclusive: a single study may draw on a particular
           theory, use input–output analysis and investigate
           ecological flows.
         </p>
@@ -1188,7 +1190,9 @@
       const cards = document.getElementById('publication-cards');
       const message = document.getElementById('publication-message');
       const search = document.getElementById('publication-search');
-      const category = document.getElementById('publication-category');
+      const facetSelect = document.getElementById('publication-facet');
+       const termSelect = document.getElementById('publication-term');
+       let taxonomy = null;
       const explorerStudy = document.getElementById('explorer-study');
       const explorerType = document.getElementById('explorer-type');
       const explorerSearch = document.getElementById('explorer-search');
@@ -1265,10 +1269,28 @@
         explorerStudy.value = ''; explorerType.value = ''; explorerSearch.value = '';
         renderExplorer();
       });
+      function populateFacets() {
+        facetSelect.replaceChildren(el('option', '', 'All dimensions'));
+        facetSelect.firstChild.value = '';
+        for (const facet of taxonomy.facets || []) {
+          const option = el('option', '', facet.label); option.value = facet.id; facetSelect.append(option);
+        }
+        populateTerms();
+      }
+      function populateTerms() {
+        termSelect.replaceChildren(el('option', '', 'All classifications'));
+        termSelect.firstChild.value = '';
+        if (!taxonomy) return;
+        const facets = (taxonomy.facets || []).filter(f => !facetSelect.value || f.id === facetSelect.value);
+        for (const facet of facets) for (const term of facet.terms || []) {
+          const option = el('option', '', facetSelect.value ? term.label : `${facet.label}: ${term.label}`);
+          option.value = term.id; termSelect.append(option);
+        }
+      }
       function render() {
         const query = search.value.trim().toLowerCase();
         const filtered = entries.filter(item =>
-          (!category.value || item.category === category.value) &&
+          (!termSelect.value || (!facetSelect.value ? Object.values(item.classification || {}).some(values => values.includes(termSelect.value)) : (item.classification?.[facetSelect.value] || []).includes(termSelect.value))) &&
           [item.title, item.authors, item.year, item.category, item.summary, item.status,
            ...(item.tags || [])].join(' ').toLowerCase().includes(query)
         );
@@ -1341,19 +1363,20 @@
         .then(data => {
           if (!Array.isArray(data)) throw new Error('Catalogue must be a JSON array');
           entries = data.filter(item => item && item.id && item.title && item.authors && item.year && item.path);
-          for (const name of [...new Set(entries.map(item => item.category).filter(Boolean))].sort()) {
-            const option = el('option', '', name);
-            option.value = name;
-            category.append(option);
-          }
+          // Classification filters are populated from taxonomy.json, not legacy category labels.
           for (const item of entries) {
             const option = el('option', '', studyName(item));
             option.value = item.id;
             explorerStudy.append(option);
           }
           search.addEventListener('input', render);
-          category.addEventListener('change', render);
+          facetSelect.addEventListener('change', () => { populateTerms(); render(); });
+          termSelect.addEventListener('change', render);
           render();
+          fetch('./taxonomy.json', { cache: 'no-cache' })
+            .then(response => { if (!response.ok) throw new Error('Taxonomy unavailable'); return response.json(); })
+            .then(data => { taxonomy = data; populateFacets(); })
+            .catch(error => { console.warn('Classification filters unavailable:', error); });
 
           // Absolute site path avoids relative URL resolution problems on GitHub Pages.
           // A missing connections file must never remove the publication cards.

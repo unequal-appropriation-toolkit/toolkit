@@ -22,6 +22,32 @@
       "strategy": "Accounts for embodied materials, energy, land and labour in trade and examines relationships with income and other factors.",
       "technique": "Eora multiregional input–output accounting, trade in value added and piecewise structural equation modelling.",
       "output": "Embodied material, energy, land and labour flows; trade in value added and modelled statistical relationships."
+    },
+    "classification": {
+      "objects": [
+        "material-ecological",
+        "value-prices-monetary"
+      ],
+      "frameworks": [
+        "ecologically-unequal-exchange"
+      ],
+      "orientations": [
+        "description-measurement",
+        "explanation"
+      ],
+      "designs": [
+        "embodied-flow-accounting"
+      ],
+      "techniques": [
+        "eemrio",
+        "tiva",
+        "piecewise-sem"
+      ],
+      "outputs": [
+        "embodied-flows",
+        "monetary-estimates",
+        "statistical-associations"
+      ]
     }
   },
   {
@@ -46,6 +72,31 @@
       "strategy": "Reaggregates embodied-flow estimates into North–South net transfers and adds monetary valuation calculations.",
       "technique": "Uses the Eora v.199.82 MRIO dataset reported by Dorninger et al. (2021), covering 1990–2015; adds monetary calculations.",
       "output": "Net embodied transfers of materials, energy, land and labour, alongside monetary estimates."
+    },
+    "classification": {
+      "objects": [
+        "material-ecological",
+        "value-prices-monetary"
+      ],
+      "frameworks": [
+        "imperialist-appropriation",
+        "ecologically-unequal-exchange"
+      ],
+      "orientations": [
+        "description-measurement",
+        "explanation"
+      ],
+      "designs": [
+        "embodied-flow-accounting"
+      ],
+      "techniques": [
+        "eemrio",
+        "monetary-valuation"
+      ],
+      "outputs": [
+        "embodied-flows",
+        "monetary-estimates"
+      ]
     }
   },
   {
@@ -72,6 +123,28 @@
       "strategy": "Synthesises needs-based thresholds and published decent-living resource estimates and compares these with current resource use.",
       "technique": "Literature-based synthesis and scenario comparison; adjusts IEA energy figures using a territorial-to-consumption-based ratio reported in Hickel et al. (2022). No full MRIO rerun.",
       "output": "Needs-based income thresholds and comparisons of energy and material requirements with current resource use; not an estimate of unequal-exchange flows."
+    },
+    "classification": {
+      "objects": [
+        "development-differentiation",
+        "material-ecological"
+      ],
+      "frameworks": [
+        "needs-based-development"
+      ],
+      "orientations": [
+        "evaluation-critique",
+        "transformation"
+      ],
+      "designs": [
+        "literature-scenario-comparison"
+      ],
+      "techniques": [
+        "scenario-comparison"
+      ],
+      "outputs": [
+        "needs-resource-requirements"
+      ]
     }
   },
   {
@@ -96,7 +169,29 @@
       "strategy": "Compares two illustrative development strategies for an initially identical economy over ten years, using shared assumptions about population growth, productivity and investment.",
       "technique": "Illustrative comparative modelling of sectoral production, relative prices, income distribution and growth. Detailed technical derivations are referred to Amin (1982).",
       "output": "Contrasting illustrative growth and distribution outcomes under national-popular and world-capitalist development strategies; not independently reproduced empirical estimates."
+    },
+    "classification": {
+      "objects": [
+        "development-differentiation",
+        "production-labour-surplus",
+        "value-prices-monetary"
+      ],
+      "frameworks": [
+        "delinking-autocentric"
+      ],
+      "orientations": [
+        "explanation",
+        "transformation"
+      ],
+      "designs": [
+        "illustrative-comparative-modelling"
+      ],
+      "techniques": [
+        "scenario-comparison"
+      ],
+      "outputs": [
+        "illustrative-development-outcomes"
+      ]
     }
   }
 ]
-
