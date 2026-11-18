@@ -198,15 +198,16 @@
     .explorer-result a { overflow-wrap:anywhere; }
     .explorer-empty { padding:16px; border:1px dashed #cfc6b8; }
 
-    /* Distinct palettes: analytical levels use solid accents; approaches use soft tints. */
+    /* Methodological sequence uses a burgundy tonal scale, distinct from research-object colours. */
     .method-card { border-radius: 8px; }
     .method-card .method-label { display:inline-block; padding:5px 9px; border-radius:4px; }
     .method-card.level-card { border-top:5px solid var(--accent); }
     .level-card .method-label { background:var(--accent); color:#fff; }
-    .level-card:nth-child(1) { --accent:#315d85; }
-    .level-card:nth-child(2) { --accent:#72529a; }
-    .level-card:nth-child(3) { --accent:#287568; }
-    .level-card:nth-child(4) { --accent:#a35b24; }
+    .level-card:nth-child(4) .method-label { color:#281a20; }
+    .level-card:nth-child(1) { --accent:#581b32; }
+    .level-card:nth-child(2) { --accent:#80314d; }
+    .level-card:nth-child(3) { --accent:#a95370; }
+    .level-card:nth-child(4) { --accent:#d58fa5; }
     .method-card.approach-card { border-left:5px solid var(--accent); }
     .approach-card .method-label { background:var(--tint); color:var(--accent); }
     .approach-card:nth-child(1) { --accent:#8b4c23; --tint:#f8e9d9; }
@@ -218,7 +219,7 @@
     /* Catalogue uses full-width rows so expansion never leaves a blank grid cell. */
     #publication-cards { display:grid; grid-template-columns:minmax(0,1fr); gap:14px; }
     /* Research-object colours: one stable semantic palette across the map and catalogue.
-       Multi-object publications receive a segmented left rail, not an arbitrary primary label. */
+       The first classified object is shown on the left rail; other objects remain visible as tags. */
     .publication-card { --object-colour:#69727a; --object-tint:#eef0f1; border-left:6px solid var(--object-colour); }
     .publication-card .method-label { background:var(--object-tint); color:#243441; letter-spacing:.015em; }
     .object-legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 18px; margin:12px 0 20px; }
@@ -233,10 +234,10 @@
     .profile-level { padding:12px 16px; background:#fff; border-left:5px solid var(--level); border-radius:3px; }
     .profile-level strong { display:block; color:var(--level); font-size:.78rem; text-transform:uppercase; letter-spacing:.055em; margin-bottom:5px; }
     .profile-level p { margin:0; }
-    .profile-level:nth-child(1) { --level:#315d85; }
-    .profile-level:nth-child(2) { --level:#72529a; }
-    .profile-level:nth-child(3) { --level:#287568; }
-    .profile-level:nth-child(4) { --level:#a35b24; }
+    .profile-level:nth-child(1) { --level:#581b32; }
+    .profile-level:nth-child(2) { --level:#80314d; }
+    .profile-level:nth-child(3) { --level:#a95370; }
+    .profile-level:nth-child(4) { --level:#d58fa5; }
     /* Publication cards remain compact until readers choose to open them. */
     .publication-card { padding:0; overflow:hidden; align-self:start; }
     .publication-card details { height:100%; }
@@ -1030,11 +1031,11 @@
       const colourLegend = document.getElementById('object-colour-legend');
       const objectColours = {
         'value-prices-monetary': { colour:'#315d85', tint:'#e5edf6' },
-        'production-labour-surplus': { colour:'#91522f', tint:'#f5ebe3' },
+        'production-labour-surplus': { colour:'#c47742', tint:'#faeee5' },
         'material-ecological': { colour:'#276e50', tint:'#e4f1e9' },
         'fiscal-financial': { colour:'#73539a', tint:'#eee8f5' },
-        'development-differentiation': { colour:'#a04455', tint:'#f8e9ed' },
-        'political-institutional-territorial': { colour:'#9a742d', tint:'#f6efd9' }
+        'development-differentiation': { colour:'#c18a21', tint:'#fbf2dc' },
+        'political-institutional-territorial': { colour:'#087f8c', tint:'#e1f3f4' }
       };
       const objectTerms = () => (taxonomy?.facets || []).find(f => f.id === 'objects')?.terms || [];
       const objectStyle = id => objectColours[id] || { colour:'#69727a', tint:'#eef0f1' };
@@ -1178,17 +1179,11 @@
         for (const item of filtered) {
           const article = el('article', 'method-card publication-card');
           const objects = (item.classification?.objects || []).filter(id => objectColours[id]);
-          const colours = objects.map(id => objectStyle(id).colour);
-          if (colours.length > 1) {
-            // Equal-width stripes give every documented object equal visual status.
-            const stops = colours.flatMap((colour, i) => [
-              `${colour} ${(i / colours.length * 100).toFixed(3)}%`,
-              `${colour} ${((i + 1) / colours.length * 100).toFixed(3)}%`
-            ]);
-            article.style.borderImage = `linear-gradient(to bottom, ${stops.join(', ')}) 1`;
-            article.style.borderImageWidth = '0 0 0 6px';
-          } else if (colours.length === 1) {
-            article.style.setProperty('--object-colour', colours[0]);
+          // The first documented research object is the provisional primary object.
+          // Secondary objects remain visible as labelled tags.
+          const primaryObject = objects[0];
+          if (primaryObject) {
+            article.style.setProperty('--object-colour', objectStyle(primaryObject).colour);
           }
 
           const details = el('details');
@@ -1206,6 +1201,14 @@
             tags.append(tag);
           }
           if (!objects.length) tags.append(el('span', 'object-tag', 'Research object not classified'));
+          if (primaryObject) {
+            const primaryTerm = objectTerms().find(t => t.id === primaryObject);
+            const primaryTag = tags.firstElementChild;
+            if (primaryTag) {
+              primaryTag.textContent = `Primary: ${primaryTerm?.label || primaryObject}`;
+              primaryTag.setAttribute('title', 'Provisional primary research object; other labels indicate additional research objects.');
+            }
+          }
           summary.append(tags);
           details.append(summary);
           const body = el('div', 'publication-detail');
