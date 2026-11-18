@@ -405,7 +405,7 @@
           <label for="publication-term" id="publication-term-label">Select a topic or method</label>
           <select id="publication-term" aria-label="Classification term"><option value="">All classifications</option></select>
         </div>
-        <p class="object-legend-note">Colour identifies the <strong>research object</strong> being investigated, not an author's theoretical position. The coloured rail beside each publication identifies its primary research object; coloured labels identify additional research objects. The full colour key appears above.</p>
+        <p class="object-legend-note">Colour identifies the <strong>research object</strong> being investigated, not an author's theoretical position. The coloured rail beside each publication identifies its primary research object; all research objects, including the primary, appear as labelled colours. The full colour key appears above.</p>
         <div id="object-colour-legend" class="object-legend" aria-label="Research-object colour key"></div>
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
         <div id="publication-cards" class="methods-grid" aria-label="Publication entries"></div>
@@ -1203,9 +1203,8 @@
           heading.append(el('p', 'publication-title', item.title));
           summary.append(heading);
           const tags = el('div', 'object-tags');
-          // Primary object is conveyed by the solid left rail, not a redundant "Primary:" tag.
-          // Only additional research objects appear as coloured labels.
-          for (const id of objects.slice(1)) {
+          // Show every research object as a named label. The left rail alone marks the primary.
+          for (const id of objects) {
             const term = objectTerms().find(t => t.id === id);
             const tag = el('span', 'object-tag', term?.label || id);
             tag.style.setProperty('--tag-colour', objectStyle(id).colour);
