@@ -1,13 +1,12 @@
 
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Zak Cope — Methods Library</title>
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Zak Cope — Methods Library</title>
+<style>
     body {
       margin: 0;
       background: #f8fafb;
@@ -103,85 +102,113 @@
 .uat-profile .uat-heading{margin:26px 0 12px;font-size:1.18rem;color:#243441}.uat-profile .uat-stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.uat-profile .uat-stage{border:1px solid #e0d8dc;border-left:5px solid var(--stage-color);background:#fffdfd;border-radius:4px;padding:14px 16px}.uat-profile .uat-stage h3{font-size:.85rem;letter-spacing:.02em;margin:0 0 8px;color:#37262f}.uat-profile .uat-stage p{font-size:.91rem;line-height:1.55;margin:0}.uat-profile .uat-continue{margin:20px 0 0;color:#506270;font-size:.88rem}
 @media(max-width:650px){.uat-profile .uat-stage-grid{grid-template-columns:1fr}.uat-profile{padding:0 15px}.uat-profile .uat-intro{padding:16px}}
 </style>
-</head>
+<style id="uat-consistent-layout">
+:root{--paper:#f4f0e8;--ink:#262421;--muted:#514b45;--rule:#d7cec1;--accent:#9d302a}
+html{scroll-behavior:smooth}
+body{margin:0!important;background:var(--paper)!important;color:var(--ink)!important;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif!important}
+body>.uat-profile{max-width:1020px!important;margin:0 auto!important;padding:28px 24px 20px!important;color:var(--ink)!important}
+.uat-profile .uat-top{margin-bottom:20px!important}
+.uat-profile .uat-top a{color:var(--accent)!important}
+.uat-profile .uat-intro{background:#fffaf2!important;border:1px solid var(--rule)!important;border-left:6px solid var(--object-color)!important;border-radius:0!important;padding:23px 27px!important}
+.uat-profile .uat-intro h2{font-size:clamp(1.5rem,2.5vw,2.05rem)!important;line-height:1.25!important;color:var(--ink)!important}
+.uat-profile .uat-eyebrow{color:#8b302b!important}
+.uat-profile .uat-meta{color:var(--muted)!important}
+.uat-profile .uat-status{color:#4b443e!important}
+.uat-profile .uat-tag,.uat-profile .uat-tag.primary{border:0!important;border-left:5px solid var(--tag-color)!important;background:#f3eee5!important;padding:5px 10px!important;font-size:.82rem!important;color:#262421!important;font-weight:600!important}
+.uat-profile .uat-heading{color:var(--ink)!important;font-size:1.24rem!important}
+.uat-profile .uat-stage{background:#fffaf5!important;border:1px solid #e2d8d5!important;border-left:5px solid var(--stage-color)!important}
+.uat-profile .uat-stage h3{color:#392b31!important}
+.uat-profile .uat-continue{display:none!important}
+.uat-detail-shell{max-width:1020px;margin:0 auto 70px;padding:0 24px}
+.uat-detail-nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:0 0 20px;font-size:.91rem}
+.uat-detail-nav a{color:#8c302b;text-decoration:none;font-weight:650}
+.uat-detail-nav a:hover{text-decoration:underline}
+.uat-extended{border-top:1px solid var(--rule);padding-top:22px}
+.uat-extended>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.22rem;font-weight:750;padding:13px 0 17px}
+.uat-extended>summary::-webkit-details-marker{display:none}
+.uat-extended>summary::after{content:"+";font-size:1.5rem;color:var(--accent)}
+.uat-extended[open]>summary::after{content:"−"}
+.uat-extended>summary small{display:block;font-size:.83rem;font-weight:400;color:var(--muted);line-height:1.45}
+.uat-extended .uat-original{background:#fffaf2;border:1px solid var(--rule);padding:24px 28px}
+.uat-original{color:var(--ink);font-size:1rem;line-height:1.65}
+.uat-original header,.uat-original main,.uat-original footer{background:transparent!important;color:var(--ink)!important;max-width:100%!important;margin:0 auto!important;padding:10px 0!important;box-shadow:none!important}
+.uat-original header a,.uat-original a{color:#8d302b!important}
+.uat-original h1{font-size:1.65rem!important;line-height:1.25!important;margin:14px 0!important;color:var(--ink)!important}
+.uat-original h2{font-size:1.26rem!important;line-height:1.3!important;margin:25px 0 12px!important;color:var(--ink)!important}
+.uat-original h3{font-size:1.08rem!important;line-height:1.35!important;color:var(--ink)!important}
+.uat-original p,.uat-original li{color:var(--ink)!important}
+.uat-original section{background:transparent!important;margin:14px 0!important;max-width:100%!important}
+.uat-original table{max-width:100%;border-collapse:collapse}
+.uat-original th,.uat-original td{border-bottom:1px solid var(--rule);padding:8px;text-align:left}
+.uat-original pre{overflow-x:auto;max-width:100%}
+.uat-original .audit-wrap{max-width:100%!important;padding:0 0 30px!important}
+.uat-original .container{max-width:100%!important}
+.uat-original .panel,.uat-original .note,.uat-original aside{background:#f6f0e8!important;color:var(--ink)!important}
+@media(max-width:700px){.uat-detail-shell{padding:0 15px}.uat-extended .uat-original{padding:14px}.uat-profile .uat-intro{padding:17px!important}}
+</style></head>
+<body><section aria-label="Standardised research profile overview" class="uat-profile" style="--object-color:#C47742"><nav class="uat-top"><a href="../">← Methods Library</a><span>Comparative methodological profile</span></nav><div class="uat-intro"><p class="uat-eyebrow">Research profile / 2019</p><h2>The Wealth of (Some) Nations: Imperialism and the Mechanics of Value Transfer</h2><p class="uat-meta">Zak Cope</p><div aria-label="Research objects" class="uat-tags"><span class="uat-tag" style="--tag-color:#C47742">Production, labour and surplus relations · primary</span><span class="uat-tag" style="--tag-color:#315D85">Value, prices and monetary relations</span><span class="uat-tag" style="--tag-color:#087F8C">Political, institutional and territorial relations</span></div><p class="uat-status">Documentation status: Source-based preliminary profile informed by accessible book text; chapter-level numerical procedures and sources not independently audited; replication not attempted</p></div><h2 class="uat-heading">Methodological architecture</h2><div class="uat-stage-grid"><section class="uat-stage" style="--stage-color:#581B32"><h3>01 / Theoretical mechanism</h3><p>Connects international value transfer, wage differentiation and imperial relations to the reproduction of class and consumption hierarchies.</p></section><section class="uat-stage" style="--stage-color:#80314D"><h3>02 / Research or estimation strategy</h3><p>Combines historical and theoretical political economy with quantitative discussion of labour embodied in international exchange.</p></section><section class="uat-stage" style="--stage-color:#A95370"><h3>03 / Analytical technique</h3><p>Comparison of labour embodied in imports and exports alongside analysis of price, wage and monopoly relations; individual numerical estimates require source-by-source verification.</p></section><section class="uat-stage" style="--stage-color:#D58FA5"><h3>04 / Measured quantities or other outputs</h3><p>Historical and theoretical claims and quantitative illustrations concerning international value transfer; not independently replicated.</p></section></div><p class="uat-continue">The original research notes, sources, qualifications and reconstruction work continue below, unchanged except for the updated Freeman access statement.</p></section><div class="uat-detail-shell"><nav aria-label="Profile navigation" class="uat-detail-nav"><a href="#uat-extended-cope-2019">Detailed documentation ↓</a><a href="../">Methods Library</a></nav><details class="uat-extended" id="uat-extended-cope-2019"><summary>Detailed research documentation<small>Original source notes, methods, references and technical material</small></summary><div class="uat-original">
 
-<body>
-<section class="uat-profile" aria-label="Standardised research profile overview" style="--object-color:#C47742"><nav class="uat-top"><a href="../">← Methods Library</a><span>Comparative methodological profile</span></nav><div class="uat-intro"><p class="uat-eyebrow">Research profile / 2019</p><h2>The Wealth of (Some) Nations: Imperialism and the Mechanics of Value Transfer</h2><p class="uat-meta">Zak Cope</p><div class="uat-tags" aria-label="Research objects"><span class="uat-tag primary" style="--tag-color:#C47742">Production, labour and surplus relations · primary</span><span class="uat-tag " style="--tag-color:#315D85">Value, prices and monetary relations</span><span class="uat-tag " style="--tag-color:#087F8C">Political, institutional and territorial relations</span></div><p class="uat-status"><strong>Documentation and verification:</strong> Source-based preliminary profile informed by accessible book text; chapter-level numerical procedures and sources not independently audited; replication not attempted</p></div><h2 class="uat-heading">Methodological architecture</h2><div class="uat-stage-grid"><section class="uat-stage" style="--stage-color:#581B32"><h3>01 / Theoretical mechanism</h3><p>Connects international value transfer, wage differentiation and imperial relations to the reproduction of class and consumption hierarchies.</p></section><section class="uat-stage" style="--stage-color:#80314D"><h3>02 / Research or estimation strategy</h3><p>Combines historical and theoretical political economy with quantitative discussion of labour embodied in international exchange.</p></section><section class="uat-stage" style="--stage-color:#A95370"><h3>03 / Analytical technique</h3><p>Comparison of labour embodied in imports and exports alongside analysis of price, wage and monopoly relations; individual numerical estimates require source-by-source verification.</p></section><section class="uat-stage" style="--stage-color:#D58FA5"><h3>04 / Measured quantities or other outputs</h3><p>Historical and theoretical claims and quantitative illustrations concerning international value transfer; not independently replicated.</p></section></div><p class="uat-continue">The original research notes, sources, qualifications and reconstruction work continue below, unchanged except for the updated Freeman access statement.</p></section>
-
-  <header>
-    <a href="../">← Methods Library</a>
-
-    <h1>
+<header>
+<a href="../">← Methods Library</a>
+<h1>
       The Wealth of (Some) Nations:
       Imperialism and the Mechanics of Value Transfer
     </h1>
-
-    <p>Zak Cope · 2019</p>
-  </header>
-
-  <main>
-    <aside>
-      <strong>Documentation status</strong>
-      <p>
+<p>Zak Cope · 2019</p>
+</header>
+<main>
+<aside>
+<strong>Documentation status</strong>
+<p>
         Source-based preliminary profile informed by accessible
         book text; chapter-level numerical procedures and
         sources not independently audited; replication not attempted.
       </p>
-    </aside>
-
-    <h2>Research profile</h2>
-
-    <p>
+</aside>
+<h2>Research profile</h2>
+<p>
       Examines mechanisms of imperial value transfer, including
       unequal exchange of embodied labour, and their implications
       for international class relations.
     </p>
-
-    <dl>
-      <dt>Research object</dt>
-      <dd>
+<dl>
+<dt>Research object</dt>
+<dd>
         Connects international value transfer, wage differentiation
         and imperial relations to the reproduction of class
         and consumption hierarchies.
       </dd>
-
-      <dt>Research design</dt>
-      <dd>
+<dt>Research design</dt>
+<dd>
         Combines historical and theoretical political economy
         with quantitative discussion of labour embodied in
         international exchange.
       </dd>
-
-      <dt>Analytical techniques</dt>
-      <dd>
+<dt>Analytical techniques</dt>
+<dd>
         Comparison of labour embodied in imports and exports
         alongside analysis of price, wage and monopoly relations;
         individual numerical estimates require source-by-source
         verification.
       </dd>
-
-      <dt>Outputs and limits of inference</dt>
-      <dd>
+<dt>Outputs and limits of inference</dt>
+<dd>
         Historical and theoretical claims and quantitative
         illustrations concerning international value transfer;
         not independently replicated.
       </dd>
-    </dl>
-
-    <h2>Source basis</h2>
-
-    <ul>
-      <li>
-        <a href="https://nnty.fun/downloads/books/pantopia_library/files/Zak%20Cope%20-%20The%20Wealth%20of%20%28Some%29%20Nations.pdf">
+</dl>
+<h2>Source basis</h2>
+<ul>
+<li>
+<a href="https://nnty.fun/downloads/books/pantopia_library/files/Zak%20Cope%20-%20The%20Wealth%20of%20%28Some%29%20Nations.pdf">
           Accessible book text
         </a>
         (check publication rights before redistribution)
       </li>
-    </ul>
-
-    <h2>Verification and next steps</h2>
-
-    <p>
+</ul>
+<h2>Verification and next steps</h2>
+<p>
       This is a preliminary source-based methodological profile,
       not an independent replication or endorsement of its causal
       claims. The Toolkit distinguishes reported measurements,
@@ -189,11 +216,10 @@
       checking and reproducible calculations are needed before
       stronger verification claims can be made.
     </p>
-
-    <footer>
+<footer>
       Unequal Appropriation Toolkit · Research classifications
       are provisional and open to correction.
     </footer>
-  </main>
-</body>
+</main>
+</div></details></div></body>
 </html>
