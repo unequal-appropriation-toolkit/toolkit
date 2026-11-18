@@ -1,13 +1,13 @@
 
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Dorninger et al. (2021) | Unequal Exchange Toolkit</title>
-  <link rel="stylesheet" href="../../assets/style.css">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Dorninger et al. (2021) | Unequal Exchange Toolkit</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
+<style>
     .audit-wrap {
       max-width: 900px;
       margin: 0 auto;
@@ -73,82 +73,109 @@
 .uat-profile .uat-heading{margin:26px 0 12px;font-size:1.18rem;color:#243441}.uat-profile .uat-stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.uat-profile .uat-stage{border:1px solid #e0d8dc;border-left:5px solid var(--stage-color);background:#fffdfd;border-radius:4px;padding:14px 16px}.uat-profile .uat-stage h3{font-size:.85rem;letter-spacing:.02em;margin:0 0 8px;color:#37262f}.uat-profile .uat-stage p{font-size:.91rem;line-height:1.55;margin:0}.uat-profile .uat-continue{margin:20px 0 0;color:#506270;font-size:.88rem}
 @media(max-width:650px){.uat-profile .uat-stage-grid{grid-template-columns:1fr}.uat-profile{padding:0 15px}.uat-profile .uat-intro{padding:16px}}
 </style>
-</head>
-
-<body>
-<section class="uat-profile" aria-label="Standardised research profile overview" style="--object-color:#276E50"><nav class="uat-top"><a href="../">← Methods Library</a><span>Comparative methodological profile</span></nav><div class="uat-intro"><p class="uat-eyebrow">Research profile / 2021</p><h2>Global patterns of ecologically unequal exchange: Implications for sustainability in the 21st century</h2><p class="uat-meta">Dorninger et al.</p><div class="uat-tags" aria-label="Research objects"><span class="uat-tag primary" style="--tag-color:#276E50">Material and ecological relations · primary</span><span class="uat-tag " style="--tag-color:#315D85">Value, prices and monetary relations</span></div><p class="uat-status"><strong>Documentation and verification:</strong> Corrected R model executed — close fit agreement; exact replication unresolved</p></div><h2 class="uat-heading">Methodological architecture</h2><div class="uat-stage-grid"><section class="uat-stage" style="--stage-color:#581B32"><h3>01 / Theoretical mechanism</h3><p>Investigates ecologically unequal exchange through asymmetries in embodied resource and labour flows between countries.</p></section><section class="uat-stage" style="--stage-color:#80314D"><h3>02 / Research or estimation strategy</h3><p>Accounts for embodied materials, energy, land and labour in trade and examines relationships with income and other factors.</p></section><section class="uat-stage" style="--stage-color:#A95370"><h3>03 / Analytical technique</h3><p>Eora multiregional input–output accounting, trade in value added and piecewise structural equation modelling.</p></section><section class="uat-stage" style="--stage-color:#D58FA5"><h3>04 / Measured quantities or other outputs</h3><p>Embodied material, energy, land and labour flows; trade in value added and modelled statistical relationships.</p></section></div><p class="uat-continue">The original research notes, sources, qualifications and reconstruction work continue below, unchanged except for the updated Freeman access statement.</p></section>
-
+<style id="uat-consistent-layout">
+:root{--paper:#f4f0e8;--ink:#262421;--muted:#514b45;--rule:#d7cec1;--accent:#9d302a}
+html{scroll-behavior:smooth}
+body{margin:0!important;background:var(--paper)!important;color:var(--ink)!important;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif!important}
+body>.uat-profile{max-width:1020px!important;margin:0 auto!important;padding:28px 24px 20px!important;color:var(--ink)!important}
+.uat-profile .uat-top{margin-bottom:20px!important}
+.uat-profile .uat-top a{color:var(--accent)!important}
+.uat-profile .uat-intro{background:#fffaf2!important;border:1px solid var(--rule)!important;border-left:6px solid var(--object-color)!important;border-radius:0!important;padding:23px 27px!important}
+.uat-profile .uat-intro h2{font-size:clamp(1.5rem,2.5vw,2.05rem)!important;line-height:1.25!important;color:var(--ink)!important}
+.uat-profile .uat-eyebrow{color:#8b302b!important}
+.uat-profile .uat-meta{color:var(--muted)!important}
+.uat-profile .uat-status{color:#4b443e!important}
+.uat-profile .uat-tag,.uat-profile .uat-tag.primary{border:0!important;border-left:5px solid var(--tag-color)!important;background:#f3eee5!important;padding:5px 10px!important;font-size:.82rem!important;color:#262421!important;font-weight:600!important}
+.uat-profile .uat-heading{color:var(--ink)!important;font-size:1.24rem!important}
+.uat-profile .uat-stage{background:#fffaf5!important;border:1px solid #e2d8d5!important;border-left:5px solid var(--stage-color)!important}
+.uat-profile .uat-stage h3{color:#392b31!important}
+.uat-profile .uat-continue{display:none!important}
+.uat-detail-shell{max-width:1020px;margin:0 auto 70px;padding:0 24px}
+.uat-detail-nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:0 0 20px;font-size:.91rem}
+.uat-detail-nav a{color:#8c302b;text-decoration:none;font-weight:650}
+.uat-detail-nav a:hover{text-decoration:underline}
+.uat-extended{border-top:1px solid var(--rule);padding-top:22px}
+.uat-extended>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.22rem;font-weight:750;padding:13px 0 17px}
+.uat-extended>summary::-webkit-details-marker{display:none}
+.uat-extended>summary::after{content:"+";font-size:1.5rem;color:var(--accent)}
+.uat-extended[open]>summary::after{content:"−"}
+.uat-extended>summary small{display:block;font-size:.83rem;font-weight:400;color:var(--muted);line-height:1.45}
+.uat-extended .uat-original{background:#fffaf2;border:1px solid var(--rule);padding:24px 28px}
+.uat-original{color:var(--ink);font-size:1rem;line-height:1.65}
+.uat-original header,.uat-original main,.uat-original footer{background:transparent!important;color:var(--ink)!important;max-width:100%!important;margin:0 auto!important;padding:10px 0!important;box-shadow:none!important}
+.uat-original header a,.uat-original a{color:#8d302b!important}
+.uat-original h1{font-size:1.65rem!important;line-height:1.25!important;margin:14px 0!important;color:var(--ink)!important}
+.uat-original h2{font-size:1.26rem!important;line-height:1.3!important;margin:25px 0 12px!important;color:var(--ink)!important}
+.uat-original h3{font-size:1.08rem!important;line-height:1.35!important;color:var(--ink)!important}
+.uat-original p,.uat-original li{color:var(--ink)!important}
+.uat-original section{background:transparent!important;margin:14px 0!important;max-width:100%!important}
+.uat-original table{max-width:100%;border-collapse:collapse}
+.uat-original th,.uat-original td{border-bottom:1px solid var(--rule);padding:8px;text-align:left}
+.uat-original pre{overflow-x:auto;max-width:100%}
+.uat-original .audit-wrap{max-width:100%!important;padding:0 0 30px!important}
+.uat-original .container{max-width:100%!important}
+.uat-original .panel,.uat-original .note,.uat-original aside{background:#f6f0e8!important;color:var(--ink)!important}
+@media(max-width:700px){.uat-detail-shell{padding:0 15px}.uat-extended .uat-original{padding:14px}.uat-profile .uat-intro{padding:17px!important}}
+</style></head>
+<body><section aria-label="Standardised research profile overview" class="uat-profile" style="--object-color:#276E50"><nav class="uat-top"><a href="../">← Methods Library</a><span>Comparative methodological profile</span></nav><div class="uat-intro"><p class="uat-eyebrow">Research profile / 2021</p><h2>Global patterns of ecologically unequal exchange: Implications for sustainability in the 21st century</h2><p class="uat-meta">Dorninger et al.</p><div aria-label="Research objects" class="uat-tags"><span class="uat-tag" style="--tag-color:#276E50">Material and ecological relations · primary</span><span class="uat-tag" style="--tag-color:#315D85">Value, prices and monetary relations</span></div><p class="uat-status">Documentation status: Corrected R model executed — close fit agreement; exact replication unresolved</p></div><h2 class="uat-heading">Methodological architecture</h2><div class="uat-stage-grid"><section class="uat-stage" style="--stage-color:#581B32"><h3>01 / Theoretical mechanism</h3><p>Investigates ecologically unequal exchange through asymmetries in embodied resource and labour flows between countries.</p></section><section class="uat-stage" style="--stage-color:#80314D"><h3>02 / Research or estimation strategy</h3><p>Accounts for embodied materials, energy, land and labour in trade and examines relationships with income and other factors.</p></section><section class="uat-stage" style="--stage-color:#A95370"><h3>03 / Analytical technique</h3><p>Eora multiregional input–output accounting, trade in value added and piecewise structural equation modelling.</p></section><section class="uat-stage" style="--stage-color:#D58FA5"><h3>04 / Measured quantities or other outputs</h3><p>Embodied material, energy, land and labour flows; trade in value added and modelled statistical relationships.</p></section></div><p class="uat-continue">The original research notes, sources, qualifications and reconstruction work continue below, unchanged except for the updated Freeman access statement.</p></section><div class="uat-detail-shell"><nav aria-label="Profile navigation" class="uat-detail-nav"><a href="#uat-extended-dorninger">Detailed documentation ↓</a><a href="../">Methods Library</a></nav><details class="uat-extended" id="uat-extended-dorninger"><summary>Detailed research documentation<small>Original source notes, methods, references and technical material</small></summary><div class="uat-original">
 
 <header class="container" style="padding:1.2rem 0;border-bottom:1px solid #cfc6b8">
-  <a href="../../index.html">Unequal Exchange Toolkit</a>
-  &nbsp; / &nbsp;
+<a href="../../index.html">Unequal Exchange Toolkit</a>
+    /  
   <a href="../">Methods Library</a>
-  &nbsp; / &nbsp;
+    /  
   Dorninger et al. (2021)
 </header>
-
 <main class="container audit-wrap">
-
-  <p class="eyebrow">METHODS LIBRARY / RESEARCH PROFILE 001</p>
-
-  <h1>Dorninger et al. (2021): Global patterns of ecologically unequal exchange</h1>
-
-  <p class="lead">
+<p class="eyebrow">METHODS LIBRARY / RESEARCH PROFILE 001</p>
+<h1>Dorninger et al. (2021): Global patterns of ecologically unequal exchange</h1>
+<p class="lead">
     A documented account of how one study traces embodied resources,
     trade in value added and statistical relationships across the
     world economy.
   </p>
-
-  <p>
-    <span class="tag">
+<p>
+<span class="tag">
       Corrected R model executed — close fit agreement; exact replication unresolved
     </span>
-  </p>
-
-  
+</p>
 <div class="panel">
-  <h2>What can you do with this entry?</h2>
-
-  <p>
-    <strong>Understand the method:</strong>
+<h2>What can you do with this entry?</h2>
+<p>
+<strong>Understand the method:</strong>
     Follow how the study combines embodied-resource accounting,
     monetary measures and statistical modelling to investigate
     ecologically unequal exchange.
   </p>
-
-  <p>
-    <strong>Reproduce part of the analysis:</strong>
+<p>
+<strong>Reproduce part of the analysis:</strong>
     Use the publisher's supplementary data and the Toolkit's
     R script to reconstruct the 2015 materials structural
     equation model. The corrected implementation produces
     global model-fit statistics close to those published.
   </p>
-
-  <p>
-    <strong>Know what remains unverified:</strong>
+<p>
+<strong>Know what remains unverified:</strong>
     The Toolkit has not reproduced the original input–output
     calculations that generated the resource-flow and monetary
     data. Exact agreement across all statistical coefficients
     also remains unresolved.
   </p>
-
-  <p>
-    <strong>Go further:</strong>
+<p>
+<strong>Go further:</strong>
     Reconstructing the complete study would require the
     underlying input–output data, environmental extensions,
     processing decisions and computational workflow.
   </p>
-
-  <p>
-    <strong>In short:</strong>
+<p>
+<strong>In short:</strong>
     This entry provides methodological documentation and a
     partial statistical reconstruction, not a full replication
     of the study.
   </p>
 </div>
-
-  <div class="panel">
-    <strong>Primary source.</strong>
+<div class="panel">
+<strong>Primary source.</strong>
     Dorninger, C., Hornborg, A., Abson, D. J., et al. (2021).
     “Global patterns of ecologically unequal exchange:
     Implications for sustainability in the 21st century.”
@@ -159,10 +186,8 @@
     This profile is an independent educational reconstruction,
     not author-endorsed code.
   </div>
-
-  <h2>1. Research question and scope</h2>
-
-  <p>
+<h2>1. Research question and scope</h2>
+<p>
     The authors examine international asymmetries in embodied
     materials, energy, land and labour, alongside monetary value
     added, over 1990–2015. Their global database covers 189
@@ -171,72 +196,68 @@
     income-based groups, treating China and India separately.
     These categories are specific to this study.
   </p>
-
-  <h2>2. Keep the analytical levels distinct</h2>
-
-  <div class="scroll">
-    <table>
-      <thead>
-        <tr>
-          <th>Level</th>
-          <th>What the paper uses</th>
-          <th>What it establishes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Theoretical approach</td>
-          <td>Ecologically unequal exchange</td>
-          <td>
+<h2>2. Keep the analytical levels distinct</h2>
+<div class="scroll">
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What the paper uses</th>
+<th>What it establishes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Theoretical approach</td>
+<td>Ecologically unequal exchange</td>
+<td>
             A framework for investigating asymmetric resource
             transfers and monetary compensation.
           </td>
-        </tr>
-        <tr>
-          <td>Accounting technique</td>
-          <td>
+</tr>
+<tr>
+<td>Accounting technique</td>
+<td>
             Environmentally extended multi-regional input–output
             analysis (EEMRIO), using Eora v199.82
           </td>
-          <td>
+<td>
             Traces direct and upstream inputs embodied in final
             demand and trade.
           </td>
-        </tr>
-        <tr>
-          <td>Measured quantities</td>
-          <td>
+</tr>
+<tr>
+<td>Measured quantities</td>
+<td>
             Raw material equivalents, energy, land and labour
           </td>
-          <td>
+<td>
             Physical resource requirements in different units;
             embodied labour is an indicator, not a stand-alone
             computational technique.
           </td>
-        </tr>
-        <tr>
-          <td>Monetary counterpart</td>
-          <td>Trade in Value Added (TiVA)</td>
-          <td>
+</tr>
+<tr>
+<td>Monetary counterpart</td>
+<td>Trade in Value Added (TiVA)</td>
+<td>
             Locates monetary value added embodied in supply chains
             and compares it with exported resource units.
           </td>
-        </tr>
-        <tr>
-          <td>Statistical technique</td>
-          <td>Piecewise structural equation modelling (SEM)</td>
-          <td>
+</tr>
+<tr>
+<td>Statistical technique</td>
+<td>Piecewise structural equation modelling (SEM)</td>
+<td>
             Tests specified statistical relationships; model fit
             alone does not establish causal identification.
           </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>3. Core accounting logic</h2>
-
-  <p>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>3. Core accounting logic</h2>
+<p>
     Input–output transactions yield a direct-input coefficient
     matrix <code>A</code> and Leontief inverse
     <code>L = (I − A)⁻¹</code>. With final demand <code>y</code>,
@@ -250,10 +271,8 @@
     demand. See the published equations in sections 3.1–3.2;
     this is a conceptual transcription, not executable Eora code.
   </p>
-
-  <h2>4. Statistical model: materials</h2>
-
-  <p>
+<h2>4. Statistical model: materials</h2>
+<p>
     Figure 4a depicts five component regressions involving
     reserves, income, technological adoption, military
     expenditure, net imports of raw material equivalents and
@@ -264,54 +283,52 @@
     <code>piecewiseSEM</code>. Their reported overall
     materials-model fit is Fisher’s C = 2.57, p = 0.63.
   </p>
-
-  <h2>5. Sources and reproducibility audit</h2>
-
-  <div class="scroll">
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Status</th>
-          <th>Evidence / next test</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Paper and method description</td>
-          <td>Available</td>
-          <td>Sections 3.1–3.4 and Figure 4.</td>
-        </tr>
-        <tr>
-          <td>2015 SEM inputs</td>
-          <td>Available</td>
-          <td>
+<h2>5. Sources and reproducibility audit</h2>
+<div class="scroll">
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Status</th>
+<th>Evidence / next test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paper and method description</td>
+<td>Available</td>
+<td>Sections 3.1–3.4 and Figure 4.</td>
+</tr>
+<tr>
+<td>2015 SEM inputs</td>
+<td>Available</td>
+<td>
             Publisher supplement Excel: 170 country observations,
             with missing entries in some variables.
           </td>
-        </tr>
-        <tr>
-          <td>Author R scripts</td>
-          <td>Not established</td>
-          <td>
+</tr>
+<tr>
+<td>Author R scripts</td>
+<td>Not established</td>
+<td>
             No executable author script has been verified in
             the materials inspected.
           </td>
-        </tr>
-        <tr>
-          <td>Independent materials coefficients</td>
-          <td>Partial reconstruction</td>
-          <td>
+</tr>
+<tr>
+<td>Independent materials coefficients</td>
+<td>Partial reconstruction</td>
+<td>
             Python and R v1 component regressions agree to
             reported precision; technology → value added is
             significant in the reconstruction but marked
             n.s. in Figure 4a.
           </td>
-        </tr>
-        <tr>
-          <td>Full piecewise SEM fit</td>
-          <td>R v1 and corrected v2 executed</td>
-          <td>
+</tr>
+<tr>
+<td>Full piecewise SEM fit</td>
+<td>R v1 and corrected v2 executed</td>
+<td>
             V1 complete-case model: n = 130, Fisher’s C = 1.258
             (p = 0.533; df = 2). V1 inadvertently included an
             extra technology → military path. The user executed
@@ -321,30 +338,28 @@
             Fisher’s C = 2.57 (p = 0.63). Close agreement is
             not exact replication.
           </td>
-        </tr>
-        <tr>
-          <td>1990–2015 resource-flow computation</td>
-          <td>Not reproduced</td>
-          <td>
+</tr>
+<tr>
+<td>1990–2015 resource-flow computation</td>
+<td>Not reproduced</td>
+<td>
             Requires the relevant Eora inputs, extensions,
             processing decisions and computational workflow.
           </td>
-        </tr>
-        <tr>
-          <td>Updated series or subnational Sabah estimates</td>
-          <td>Not established</td>
-          <td>
+</tr>
+<tr>
+<td>Updated series or subnational Sabah estimates</td>
+<td>Not established</td>
+<td>
             Country-level Eora coverage does not itself provide
             Sabah-specific observations.
           </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>6. Independent reconstruction</h2>
-
-  <p>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>6. Independent reconstruction</h2>
+<p>
     The accompanying
     <a href="../../assets/dorninger-materials.R">R script</a>
     is an independently authored attempt to reconstruct the
@@ -363,11 +378,9 @@
     closely match the published figure. Neither version is
     author-supplied code or a verified exact replication.
   </p>
-
-  <h2>6a. Results audit — 17 September 2026</h2>
-
-  <div class="panel">
-    <strong>Corrected R run completed.</strong>
+<h2>6a. Results audit — 17 September 2026</h2>
+<div class="panel">
+<strong>Corrected R run completed.</strong>
     The initial v1 script ran five component regressions and
     a complete-case piecewise SEM (n = 130), but mistakenly
     specified a technology → military path not present in
@@ -379,51 +392,49 @@
     not supplied, so no v2 coefficient-level replication
     is claimed.
   </div>
-
-  <div class="scroll">
-    <table>
-      <thead>
-        <tr>
-          <th>Global fit</th>
-          <th>Published Figure 4a</th>
-          <th>R v1 (extra path)</th>
-          <th>Corrected R v2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Fisher’s C</td>
-          <td>2.57</td>
-          <td>1.258</td>
-          <td>2.531</td>
-        </tr>
-        <tr>
-          <td>Fisher’s C p-value</td>
-          <td>0.63</td>
-          <td>0.533</td>
-          <td>0.639</td>
-        </tr>
-        <tr>
-          <td>Fisher’s C degrees of freedom</td>
-          <td>
+<div class="scroll">
+<table>
+<thead>
+<tr>
+<th>Global fit</th>
+<th>Published Figure 4a</th>
+<th>R v1 (extra path)</th>
+<th>Corrected R v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fisher’s C</td>
+<td>2.57</td>
+<td>1.258</td>
+<td>2.531</td>
+</tr>
+<tr>
+<td>Fisher’s C p-value</td>
+<td>0.63</td>
+<td>0.533</td>
+<td>0.639</td>
+</tr>
+<tr>
+<td>Fisher’s C degrees of freedom</td>
+<td>
             4 (consistent with reported C and p;
             verify against original figure)
           </td>
-          <td>2</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>Chi-squared goodness-of-fit</td>
-          <td>Not compared here</td>
-          <td>0.431; p = 0.512; df = 1</td>
-          <td>1.098; p = 0.578; df = 2</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>
-    <strong>Coefficient audit — v1 only.</strong>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Chi-squared goodness-of-fit</td>
+<td>Not compared here</td>
+<td>0.431; p = 0.512; df = 1</td>
+<td>1.098; p = 0.578; df = 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<strong>Coefficient audit — v1 only.</strong>
     Several unstandardized coefficients from the original
     complete-case R run closely matched transcribed Figure 4a
     values: reserves → net materials −8.1202 versus −8.120;
@@ -437,9 +448,8 @@
     attributed to the corrected v2 model without its
     coefficient output.
   </p>
-
-  <p>
-    <strong>Remaining limits.</strong>
+<p>
+<strong>Remaining limits.</strong>
     The supplementary worksheet contains 170 country rows;
     v1's common complete-case sample was 130, and the corrected
     script applies the same sample restriction, although the
@@ -451,10 +461,8 @@
     with close global-fit agreement, not an exact or full-paper
     replication.
   </p>
-
-  <h2>7. Interpretation and limitations</h2>
-
-  <p>
+<h2>7. Interpretation and limitations</h2>
+<p>
     The study distinguishes asymmetric physical transfers from
     a claim that commodities possess an objectively measurable
     value above their market price. Its country-level design
@@ -465,10 +473,8 @@
     extensions. Statistical associations should not be read
     as proof of a single causal mechanism.
   </p>
-
-  <h2>8. Connection to the Relinking Scenario Builder</h2>
-
-  <p>
+<h2>8. Connection to the Relinking Scenario Builder</h2>
+<p>
     The paper investigates how resource transfers and
     value-added patterns relate to the distribution of
     productive infrastructure. The
@@ -479,40 +485,34 @@
     This is a proposed research extension, not a finding
     derived from the paper’s model.
   </p>
-
-  <h2>9. What this method establishes — and what it does not</h2>
-
-  <p>
+<h2>9. What this method establishes — and what it does not</h2>
+<p>
     Dorninger et al. combine environmentally extended
     multiregional input–output analysis, value-added measures
     and structural equation modelling. These components
     answer different questions and should not be treated
     as interchangeable evidence.
   </p>
-
-  <h3>What the method can investigate</h3>
-
-  <ul>
-    <li>
-      <strong>Embodied resource flows:</strong>
+<h3>What the method can investigate</h3>
+<ul>
+<li>
+<strong>Embodied resource flows:</strong>
       the distribution of materials, energy, land and labour
       embodied in international production and consumption.
     </li>
-    <li>
-      <strong>Physical and monetary asymmetries:</strong>
+<li>
+<strong>Physical and monetary asymmetries:</strong>
       relationships between countries' embodied-resource
       trade positions and monetary returns.
     </li>
-    <li>
-      <strong>Statistical associations:</strong>
+<li>
+<strong>Statistical associations:</strong>
       relationships among the variables included in the
       specified structural equation model.
     </li>
-  </ul>
-
-  <h3>Limits of inference</h3>
-
-  <p>
+</ul>
+<h3>Limits of inference</h3>
+<p>
     Net physical transfers do not automatically establish
     monetary value transfers. Differences in monetary
     returns do not, by themselves, identify a unique
@@ -520,17 +520,14 @@
     model fit does not establish that its specified
     relationships are causal.
   </p>
-
-  <p>
+<p>
     The 2015 country-level model also cannot, on its own,
     establish historical trajectories or identify how
     benefits and costs are distributed among actors
     within countries.
   </p>
-
-  <h3>Independent reconstruction</h3>
-
-  <p>
+<h3>Independent reconstruction</h3>
+<p>
     The Toolkit independently reconstructed the 2015
     materials structural equation model using the
     publisher's supplementary data. After correcting
@@ -539,17 +536,14 @@
     (p = 0.639), closely matching the published
     Fisher's C = 2.57 (p = 0.63).
   </p>
-
-  <p>
+<p>
     This is close agreement in global model fit,
     not verification of every coefficient or of the
     upstream input–output calculations. Exact replication
     remains unresolved.
   </p>
-
-  <h3>Questions for further research</h3>
-
-  <p>
+<h3>Questions for further research</h3>
+<p>
     Further work could examine sensitivity to the
     underlying input–output database, differences in
     sectoral composition, competing explanations for
@@ -559,10 +553,8 @@
     transformed requires additional evidence about
     productive, institutional and political capacities.
   </p>
-
-  <h2>References and provenance</h2>
-
-  <p>
+<h2>References and provenance</h2>
+<p>
     Primary paper:
     <a href="https://doi.org/10.1016/j.ecolecon.2020.106824">
       Dorninger et al. (2021)
@@ -577,16 +569,13 @@
     Last audit: 17 September 2026. No live database-access
     or code-availability claim is made here.
   </p>
-
 </main>
-
 <footer class="container" style="padding:2rem 0;border-top:1px solid #cfc6b8">
-  <a href="../">← Methods Library</a>
-  &nbsp;
+<a href="../">← Methods Library</a>
+   
   <a href="../../data/">Data</a>
-  &nbsp;
+   
   <a href="../../contribute/">Contribute</a>
 </footer>
-
-</body>
+</div></details></div></body>
 </html>
