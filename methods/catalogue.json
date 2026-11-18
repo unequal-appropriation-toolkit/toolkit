@@ -16,7 +16,7 @@
       "labour"
     ],
     "path": "dorninger/",
-    "status": "Corrected R model executed — close fit agreement; exact replication unresolved",
+    "status": "Toolkit R reconstruction executed; approximate fit agreement; exact reproduction unresolved",
     "levels": {
       "mechanism": "Investigates ecologically unequal exchange through asymmetries in embodied resource and labour flows between countries.",
       "strategy": "Accounts for embodied materials, energy, land and labour in trade and examines relationships with income and other factors.",
@@ -210,12 +210,12 @@
     ],
     "path": "freeman-world-value/",
     "summary": "Investigates persistent international monetary inequality and proposes a pluralist research programme to explain divergence; presents the Monetary Inequality Index (MII).",
-    "status": "Author-supplied manuscript; bibliographic publication status unverified; calculations and underlying data not independently reproduced",
+    "status": "Methodological profile updated from author-shared manuscript; author review invited; independent reproduction not undertaken",
     "levels": {
-      "mechanism": "Examines international divergence and competing explanations of monetary inequality, including world-value and terms-of-trade arguments. The paper proposes testing explanations rather than treating the index as a causal test.",
-      "strategy": "Compares population-weighted GDP per capita of defined country blocs in US dollars at current market exchange rates; distinguishes monetary measures from PPP consumption measures and productive capacity.",
-      "technique": "Monetary Inequality Index (MII): ratio of GDP per capita of a benchmark group to GDP per capita of a comparison group. Draws on Penn national accounts data extended with World Economic Outlook data; author calculations.",
-      "output": "MII time series and comparative charts of divergence, including comparisons across country groupings; not a direct estimate of value transferred."
+      "mechanism": "Proposes that persistent world-market price–value differences generate unequal realisation advantages, reinforcing technological rents, investment capacity and structural divergence.",
+      "strategy": "Compares historically specified country blocs; distinguishes monetary, consumption and productive inequality; contrasts employment-based productive contributions with monetary value realised.",
+      "technique": "Monetary Inequality Index (MII), Theil decomposition, Employee Inequality Index (EII), labour-based produced-versus-realised value comparisons and world MELT.",
+      "output": "Monetary divergence series, bloc comparisons and reported labour-based estimates of realisation gains and losses. The MII alone does not establish causation."
     },
     "classification": {
       "objects": [
