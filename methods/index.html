@@ -265,6 +265,16 @@
     #publication-cards .publication-card details[open] summary::after { content:'Close −'; }
     #publication-cards .publication-card .publication-detail { padding:12px 18px 22px; background:#fffdf8; }
     #publication-cards .publication-card summary:hover,#publication-cards .publication-card summary:focus-visible { background:#f4efe7; }
+    /* Primary research object: a single solid rail at the LEFT of each publication.
+       The preceding editorial-row rule had reset border:0, hiding the colour. */
+    #publication-cards { gap:7px; border-top:0; }
+    #publication-cards .publication-card {
+      border:0;
+      border-left:6px solid var(--object-colour);
+      border-bottom:1px solid #d8d0c5;
+      background:transparent;
+    }
+    #publication-cards .publication-card summary { padding-left:16px; }
     /* Clear visual and spatial division between catalogue and relationship explorer. */
     .methods-section-alternate { background:#f4efe7; padding:48px 0 54px; }
     .methods-section-alternate .explorer { margin:20px 0 0; background:#fffdf8; border:1px solid #d8d0c5; }
@@ -395,7 +405,7 @@
           <label for="publication-term" id="publication-term-label">Select a topic or method</label>
           <select id="publication-term" aria-label="Classification term"><option value="">All classifications</option></select>
         </div>
-        <p class="object-legend-note">Colour identifies the <strong>research object</strong> being investigated, not an author's theoretical position. Multiple colours indicate multiple objects; labels remain visible for accessibility.</p>
+        <p class="object-legend-note">Colour identifies the <strong>research object</strong> being investigated, not an author's theoretical position. The coloured rail beside each publication identifies its primary research object; coloured labels identify additional research objects. The full colour key appears above.</p>
         <div id="object-colour-legend" class="object-legend" aria-label="Research-object colour key"></div>
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
         <div id="publication-cards" class="methods-grid" aria-label="Publication entries"></div>
@@ -1193,7 +1203,9 @@
           heading.append(el('p', 'publication-title', item.title));
           summary.append(heading);
           const tags = el('div', 'object-tags');
-          for (const id of objects) {
+          // Primary object is conveyed by the solid left rail, not a redundant "Primary:" tag.
+          // Only additional research objects appear as coloured labels.
+          for (const id of objects.slice(1)) {
             const term = objectTerms().find(t => t.id === id);
             const tag = el('span', 'object-tag', term?.label || id);
             tag.style.setProperty('--tag-colour', objectStyle(id).colour);
@@ -1203,11 +1215,7 @@
           if (!objects.length) tags.append(el('span', 'object-tag', 'Research object not classified'));
           if (primaryObject) {
             const primaryTerm = objectTerms().find(t => t.id === primaryObject);
-            const primaryTag = tags.firstElementChild;
-            if (primaryTag) {
-              primaryTag.textContent = `Primary: ${primaryTerm?.label || primaryObject}`;
-              primaryTag.setAttribute('title', 'Provisional primary research object; other labels indicate additional research objects.');
-            }
+            article.setAttribute('title', `Primary research object: ${primaryTerm?.label || primaryObject}`);
           }
           summary.append(tags);
           details.append(summary);
