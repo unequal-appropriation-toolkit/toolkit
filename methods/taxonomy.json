@@ -75,6 +75,21 @@
           "id": "law-of-world-value",
           "label": "Law of world value",
           "definition": "Frameworks investigating international value relations and their global monetary or developmental expressions."
+        },
+        {
+          "id": "emmanuel-unequal-exchange",
+          "label": "Emmanuelian unequal exchange",
+          "definition": "International wage differentials and price formation in theories of unequal exchange."
+        },
+        {
+          "id": "global-money-unequal-exchange",
+          "label": "Global money and exchange-rate inequality",
+          "definition": "Explanations centred on the non-uniform international value of money and currency valuation."
+        },
+        {
+          "id": "imperial-labour-value-transfer",
+          "label": "Imperial labour and value transfer",
+          "definition": "Accounts of imperial accumulation centred on global labour relations and value transfer."
         }
       ]
     },
@@ -139,6 +154,11 @@
           "id": "historical-structural-analysis",
           "label": "Historical and structural analysis",
           "definition": "Examines the historically constituted relations and conditions of economic outcomes."
+        },
+        {
+          "id": "theoretical-price-modelling",
+          "label": "Theoretical price modelling",
+          "definition": "Formal models of prices and distribution with stated assumptions."
         }
       ]
     },
@@ -176,6 +196,21 @@
           "id": "nominal-gdp-per-capita-ratio",
           "label": "Nominal GDP-per-capita ratio",
           "definition": "Ratio of nominal GDP per person between specified groups, converted at market exchange rates."
+        },
+        {
+          "id": "prices-of-production-modelling",
+          "label": "Prices-of-production modelling",
+          "definition": "Modelling prices of production and distributive effects."
+        },
+        {
+          "id": "ppp-mer-comparison",
+          "label": "PPP–market exchange-rate comparison",
+          "definition": "Comparison of purchasing-power and market-exchange-rate valuations."
+        },
+        {
+          "id": "embodied-labour-comparison",
+          "label": "Embodied-labour comparison",
+          "definition": "Comparison of labour quantities embodied in traded production."
         }
       ]
     },
@@ -213,6 +248,16 @@
           "id": "monetary-inequality-index",
           "label": "Monetary Inequality Index",
           "definition": "Ratio of nominal GDP per capita at market exchange rates for two specified groups."
+        },
+        {
+          "id": "theoretical-distribution-claims",
+          "label": "Theoretical distribution claims",
+          "definition": "Analytically derived claims about distribution under specified assumptions."
+        },
+        {
+          "id": "labour-transfer-interpretations",
+          "label": "Labour-transfer interpretations",
+          "definition": "Reported findings or interpretations of international embodied-labour and value transfers."
         }
       ]
     }

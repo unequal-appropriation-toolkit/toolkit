@@ -193,5 +193,188 @@
         "illustrative-development-outcomes"
       ]
     }
+  },
+  {
+    "id": "freeman-world-value",
+    "authors": "Alan Freeman",
+    "year": "Manuscript",
+    "title": "The Law of World Value",
+    "category": "Monetary inequality and world value",
+    "tags": [
+      "monetary inequality index",
+      "MII",
+      "market exchange rates",
+      "GDP per capita",
+      "international divergence",
+      "law of world value"
+    ],
+    "path": "freeman-world-value/",
+    "summary": "Investigates persistent international monetary inequality and proposes a pluralist research programme to explain divergence; presents the Monetary Inequality Index (MII).",
+    "status": "Author-supplied manuscript; bibliographic publication status unverified; calculations and underlying data not independently reproduced",
+    "levels": {
+      "mechanism": "Examines international divergence and competing explanations of monetary inequality, including world-value and terms-of-trade arguments. The paper proposes testing explanations rather than treating the index as a causal test.",
+      "strategy": "Compares population-weighted GDP per capita of defined country blocs in US dollars at current market exchange rates; distinguishes monetary measures from PPP consumption measures and productive capacity.",
+      "technique": "Monetary Inequality Index (MII): ratio of GDP per capita of a benchmark group to GDP per capita of a comparison group. Draws on Penn national accounts data extended with World Economic Outlook data; author calculations.",
+      "output": "MII time series and comparative charts of divergence, including comparisons across country groupings; not a direct estimate of value transferred."
+    },
+    "classification": {
+      "objects": [
+        "value-prices-monetary",
+        "development-differentiation"
+      ],
+      "frameworks": [
+        "law-of-world-value"
+      ],
+      "orientations": [
+        "description-measurement",
+        "explanation"
+      ],
+      "designs": [
+        "comparative-monetary-analysis"
+      ],
+      "techniques": [
+        "nominal-gdp-per-capita-ratio"
+      ],
+      "outputs": [
+        "monetary-inequality-index"
+      ]
+    }
+  },
+  {
+    "id": "emmanuel-1972",
+    "authors": "Arghiri Emmanuel",
+    "year": 1972,
+    "title": "Unequal Exchange: A Study of the Imperialism of Trade",
+    "category": "Prices of production and international wages",
+    "tags": [
+      "unequal exchange",
+      "wage differentials",
+      "prices of production",
+      "profit-rate equalisation",
+      "theoretical modelling"
+    ],
+    "path": "emmanuel-1972/",
+    "summary": "Develops a theory of unequal exchange through international wage differences and price formation, with implications for international distribution.",
+    "status": "Source-based conceptual profile using bibliographic record and Emmanuel’s openly accessible 1975 elaboration; 1972 book not fully checked; no independent reproduction",
+    "levels": {
+      "mechanism": "International wage differentials, in the context of mobile capital and tendencies toward profit-rate equalisation, affect international prices of production and distribution.",
+      "strategy": "Develops theoretical arguments and comparative price systems; the 1975 elaboration sets out algebraic and numerical examples and a modified Sraffa framework.",
+      "technique": "Theoretical price-of-production equations and comparative examples. This is not an observed international value-transfer time series.",
+      "output": "A theoretical account of international unequal exchange and its distributive implications, rather than a independently replicated monetary estimate."
+    },
+    "classification": {
+      "objects": [
+        "value-prices-monetary",
+        "production-labour-surplus",
+        "development-differentiation"
+      ],
+      "frameworks": [
+        "emmanuel-unequal-exchange"
+      ],
+      "orientations": [
+        "explanation",
+        "evaluation-critique"
+      ],
+      "designs": [
+        "theoretical-price-modelling"
+      ],
+      "techniques": [
+        "prices-of-production-modelling"
+      ],
+      "outputs": [
+        "theoretical-distribution-claims"
+      ]
+    }
+  },
+  {
+    "id": "kohler-1998",
+    "authors": "Gernot Köhler",
+    "year": 1998,
+    "title": "The Structure of Global Money and World Tables of Unequal Exchange",
+    "category": "International monetary and exchange-rate relations",
+    "tags": [
+      "global money",
+      "exchange rates",
+      "PPP",
+      "monetary inequality",
+      "unequal exchange"
+    ],
+    "path": "kohler-1998/",
+    "summary": "Investigates the non-homogeneous international value of money and uses international price/exchange-rate comparisons to estimate unequal exchange.",
+    "status": "Source-based preliminary profile; article metadata and abstract verified; precise tables and calculation steps require full-text checking; replication not attempted",
+    "levels": {
+      "mechanism": "Proposes that systematic currency undervaluation and international exchange-rate structures contribute to transfers between low- and high-income countries.",
+      "strategy": "Relates purchasing-power comparisons to market exchange-rate valuation and applies an exchange-rate distortion approach to international exchange.",
+      "technique": "International price-level or PPP versus market-exchange-rate comparison, with trade data used in unequal-exchange estimation; exact implementation to be documented from full text.",
+      "output": "Published world tables and estimated unequal-exchange quantities, whose numerical results have not been independently checked here."
+    },
+    "classification": {
+      "objects": [
+        "value-prices-monetary",
+        "development-differentiation"
+      ],
+      "frameworks": [
+        "global-money-unequal-exchange"
+      ],
+      "orientations": [
+        "description-measurement",
+        "explanation"
+      ],
+      "designs": [
+        "comparative-monetary-analysis"
+      ],
+      "techniques": [
+        "ppp-mer-comparison"
+      ],
+      "outputs": [
+        "monetary-estimates"
+      ]
+    }
+  },
+  {
+    "id": "cope-2019",
+    "authors": "Zak Cope",
+    "year": 2019,
+    "title": "The Wealth of (Some) Nations: Imperialism and the Mechanics of Value Transfer",
+    "category": "Global labour and value transfer",
+    "tags": [
+      "labour aristocracy",
+      "unequal exchange",
+      "embodied labour",
+      "imperialism",
+      "value transfer"
+    ],
+    "path": "cope-2019/",
+    "summary": "Examines mechanisms of imperial value transfer, including unequal exchange of embodied labour, and their implications for international class relations.",
+    "status": "Source-based preliminary profile informed by accessible book text; chapter-level numerical procedures and sources not independently audited; replication not attempted",
+    "levels": {
+      "mechanism": "Connects international value transfer, wage differentiation and imperial relations to the reproduction of class and consumption hierarchies.",
+      "strategy": "Combines historical and theoretical political economy with quantitative discussion of labour embodied in international exchange.",
+      "technique": "Comparison of labour embodied in imports and exports alongside analysis of price, wage and monopoly relations; individual numerical estimates require source-by-source verification.",
+      "output": "Historical and theoretical claims and quantitative illustrations concerning international value transfer; not independently replicated."
+    },
+    "classification": {
+      "objects": [
+        "production-labour-surplus",
+        "value-prices-monetary",
+        "political-institutional-territorial"
+      ],
+      "frameworks": [
+        "imperial-labour-value-transfer"
+      ],
+      "orientations": [
+        "explanation",
+        "historical-reconstruction"
+      ],
+      "designs": [
+        "historical-structural-analysis"
+      ],
+      "techniques": [
+        "embodied-labour-comparison"
+      ],
+      "outputs": [
+        "labour-transfer-interpretations"
+      ]
+    }
   }
 ]
