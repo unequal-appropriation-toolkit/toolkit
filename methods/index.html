@@ -217,11 +217,18 @@
     .approach-card:nth-child(6) { --accent: #9a742d; --tint: #f5ecd8; }
     /* Catalogue uses full-width rows so expansion never leaves a blank grid cell. */
     #publication-cards { display:grid; grid-template-columns:minmax(0,1fr); gap:14px; }
-    .publication-card { --approach:#655c51; --approach-bg:#f0ebe3; border-left:5px solid var(--approach); }
-    .publication-card[data-approach="ecological-accounting"] { --approach:#276e50; --approach-bg:#e3f1e7; }
-    .publication-card[data-approach="needs-based-development-analysis"] { --approach:#375f9b; --approach-bg:#e6edf9; }
-    .publication-card[data-approach="historical-and-structural-political-economy"] { --approach:#a04455; --approach-bg:#f7e5e9; }
-    .publication-card .method-label { background:var(--approach-bg); color:var(--approach); letter-spacing:.035em; }
+    /* Research-object colours: one stable semantic palette across the map and catalogue.
+       Multi-object publications receive a segmented left rail, not an arbitrary primary label. */
+    .publication-card { --object-colour:#69727a; --object-tint:#eef0f1; border-left:6px solid var(--object-colour); }
+    .publication-card .method-label { background:var(--object-tint); color:#243441; letter-spacing:.015em; }
+    .object-legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 18px; margin:12px 0 20px; }
+    .object-legend-item { display:flex; align-items:flex-start; gap:9px; font-size:.84rem; line-height:1.4; }
+    .object-swatch { flex:0 0 12px; width:12px; height:12px; margin-top:3px; border-radius:2px; background:var(--object-colour); }
+    .object-legend-note { font-size:.85rem; color:#645e56; margin:0 0 12px; }
+    .object-domain { border-top:4px solid var(--object-colour); }
+    .publication-card .object-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+    .publication-card .object-tag { font-size:.74rem; line-height:1.35; padding:3px 7px; border-radius:2px; background:var(--tag-tint,#eef0f1); color:#243441; border-left:3px solid var(--tag-colour,#69727a); }
+    @media (max-width:700px) { .object-legend { grid-template-columns:1fr; } }
     .method-profile { display:grid; gap:12px; margin:20px 0; }
     .profile-level { padding:12px 16px; background:#fff; border-left:5px solid var(--level); border-radius:3px; }
     .profile-level strong { display:block; color:var(--level); font-size:.78rem; text-transform:uppercase; letter-spacing:.055em; margin-bottom:5px; }
@@ -387,6 +394,8 @@
           <label for="publication-term" id="publication-term-label">Select a topic or method</label>
           <select id="publication-term" aria-label="Classification term"><option value="">All classifications</option></select>
         </div>
+        <p class="object-legend-note">Colour identifies the <strong>research object</strong> being investigated, not an author's theoretical position. Multiple colours indicate multiple objects; labels remain visible for accessibility.</p>
+        <div id="object-colour-legend" class="object-legend" aria-label="Research-object colour key"></div>
         <p id="publication-message" class="methods-small" role="status" aria-live="polite">Loading publication entries…</p>
         <div id="publication-cards" class="methods-grid" aria-label="Publication entries"></div>
 
@@ -1018,6 +1027,30 @@
        const termSelect = document.getElementById('publication-term');
       const termLabel = document.getElementById('publication-term-label');
       const objectMap = document.getElementById('research-object-map');
+      const colourLegend = document.getElementById('object-colour-legend');
+      const objectColours = {
+        'value-prices-monetary': { colour:'#315d85', tint:'#e5edf6' },
+        'production-labour-surplus': { colour:'#91522f', tint:'#f5ebe3' },
+        'material-ecological': { colour:'#276e50', tint:'#e4f1e9' },
+        'fiscal-financial': { colour:'#73539a', tint:'#eee8f5' },
+        'development-differentiation': { colour:'#a04455', tint:'#f8e9ed' },
+        'political-institutional-territorial': { colour:'#9a742d', tint:'#f6efd9' }
+      };
+      const objectTerms = () => (taxonomy?.facets || []).find(f => f.id === 'objects')?.terms || [];
+      const objectStyle = id => objectColours[id] || { colour:'#69727a', tint:'#eef0f1' };
+      function renderColourLegend() {
+        if (!colourLegend) return;
+        colourLegend.replaceChildren();
+        for (const term of objectTerms()) {
+          const item = el('div', 'object-legend-item');
+          const swatch = el('span', 'object-swatch');
+          swatch.style.setProperty('--object-colour', objectStyle(term.id).colour);
+          swatch.setAttribute('aria-hidden', 'true');
+          item.append(swatch, el('span', '', term.label));
+          colourLegend.append(item);
+        }
+      }
+
        let taxonomy = null;
       const explorerStudy = document.getElementById('explorer-study');
       const explorerType = document.getElementById('explorer-type');
@@ -1121,7 +1154,8 @@
         const objects = (taxonomy.facets || []).find(f => f.id === 'objects');
         if (!objects) return;
         for (const term of objects.terms || []) {
-          const article = el('article', 'method-card');
+          const article = el('article', 'method-card object-domain');
+          article.style.setProperty('--object-colour', objectStyle(term.id).colour);
           article.append(el('h3', '', term.label));
           article.append(el('p', '', term.definition || ''));
           const button = el('button', '', 'Explore related studies');
@@ -1143,14 +1177,36 @@
         cards.replaceChildren();
         for (const item of filtered) {
           const article = el('article', 'method-card publication-card');
-          article.dataset.approach = (item.category || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          const objects = (item.classification?.objects || []).filter(id => objectColours[id]);
+          const colours = objects.map(id => objectStyle(id).colour);
+          if (colours.length > 1) {
+            // Equal-width stripes give every documented object equal visual status.
+            const stops = colours.flatMap((colour, i) => [
+              `${colour} ${(i / colours.length * 100).toFixed(3)}%`,
+              `${colour} ${((i + 1) / colours.length * 100).toFixed(3)}%`
+            ]);
+            article.style.borderImage = `linear-gradient(to bottom, ${stops.join(', ')}) 1`;
+            article.style.borderImageWidth = '0 0 0 6px';
+          } else if (colours.length === 1) {
+            article.style.setProperty('--object-colour', colours[0]);
+          }
+
           const details = el('details');
           const summary = el('summary');
           const heading = el('div', 'publication-heading');
           heading.append(el('h3', '', `${item.authors} (${item.year})`));
           heading.append(el('p', 'publication-title', item.title));
           summary.append(heading);
-          summary.append(el('span', 'method-label', item.category || 'Research study'));
+          const tags = el('div', 'object-tags');
+          for (const id of objects) {
+            const term = objectTerms().find(t => t.id === id);
+            const tag = el('span', 'object-tag', term?.label || id);
+            tag.style.setProperty('--tag-colour', objectStyle(id).colour);
+            tag.style.setProperty('--tag-tint', objectStyle(id).tint);
+            tags.append(tag);
+          }
+          if (!objects.length) tags.append(el('span', 'object-tag', 'Research object not classified'));
+          summary.append(tags);
           details.append(summary);
           const body = el('div', 'publication-detail');
           if (item.summary) body.append(el('p', '', item.summary));
@@ -1223,7 +1279,7 @@
           render();
           fetch('./taxonomy.json', { cache: 'no-cache' })
             .then(response => { if (!response.ok) throw new Error('Taxonomy unavailable'); return response.json(); })
-            .then(data => { taxonomy = data; populateFacets(); renderObjectMap(); })
+            .then(data => { taxonomy = data; populateFacets(); renderObjectMap(); renderColourLegend(); })
             .catch(error => { console.warn('Classification filters unavailable:', error); });
 
           // Absolute site path avoids relative URL resolution problems on GitHub Pages.
